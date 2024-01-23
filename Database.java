@@ -27,6 +27,8 @@ public class JDBCBasicExample {
 
             String selectRecord = "SELECT * FROM users where username= "+"john";
             String selectRecord2 = "SELECT * FROM users where password= "+"password123";
+
+            String selectRecord3 = "SELECT * FROM users where username= "+"paul";
             
             // Display operation
             String displayQuery = "SELECT * FROM users";
