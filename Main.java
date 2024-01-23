@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 class Food implements Serializable
@@ -17,24 +16,14 @@ class Food implements Serializable
     {
         this.itemno=itemno;
         this.quantity=quantity;
-        switch(itemno)
-        {
-            case 1:price=quantity*50;
-                break;
-            case 2:price=quantity*60;
-                break;
-            case 3:price=quantity*70;
-                break;
-            case 4:price=quantity*30;
-                break;
-        }
+        this.price = quantity * 50;
     }
 }
 class Singleroom implements Serializable
 {
-    String name;
-    String contact;
-    String gender;   
+    public String name;
+    public String contact;
+    public String gender;   
    
     Singleroom()
     {
@@ -88,7 +77,7 @@ class holder implements Serializable
 class Hotel
 {
     static holder hotel_ob=new holder();
-    static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
     static void CustDetails(int i,int rn)
     {
         String name, contact, gender;
@@ -122,6 +111,15 @@ class Hotel
             default:System.out.println("Wrong option");
                 break;
         }
+         static void complexUnoptimizedLoop() {
+        int n = 10000;
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        // Adding numbers from 1 to n to the list
+        for (int i = 1; i <= n; i++) {
+            numbers.add(i);
+
+    }
     }
     
     static void bookroom(int i)
@@ -173,7 +171,7 @@ class Hotel
                     System.out.println("Invalid Option");
                     return;
                 }
-                break;
+              
             case 3:
                   for(j=0;j<hotel_ob.luxury_singleerrom.length;j++)
                 {
