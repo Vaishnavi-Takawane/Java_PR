@@ -4,6 +4,7 @@ public class JDBCBasicExample {
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
     static final String USER = "DB_testUname";
     static final String PASS = "DB_testPass";
+    static final String EMAIL = "DB_testEmail";
 
     public static void main(String[] args) {
         Connection connection;
