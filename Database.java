@@ -1,4 +1,3 @@
-import java.sql.*;
 
 public class JDBCBasicExample {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -7,7 +6,7 @@ public class JDBCBasicExample {
     static final String PASS = "DB_testPass";
 
     public static void main(String[] args) {
-        Connection connection = null;
+        Connection connection;
         Statement statement = null;
 
         try {
