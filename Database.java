@@ -1,11 +1,13 @@
-import java.sql.*;
 
 public class JDBCBasicExample {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
+    static final String USER = "DB_testUname";
+    static final String PASS = "DB_testPass";
+    static final String EMAIL = "DB_testEmail";
 
     public static void main(String[] args) {
-        Connection connection = null;
+        Connection connection;
         Statement statement = null;
 
         try {
@@ -24,6 +26,11 @@ public class JDBCBasicExample {
             statement.executeUpdate(insertQuery);
             System.out.println("User inserted successfully!");
 
+            String selectRecord = "SELECT * FROM users where username= "+"john";
+            String selectRecord2 = "SELECT * FROM users where password= "+"password123";
+
+            String selectRecord3 = "SELECT * FROM users where username= "+"paul";
+            
             // Display operation
             String displayQuery = "SELECT * FROM users";
             ResultSet resultSet = statement.executeQuery(displayQuery);
