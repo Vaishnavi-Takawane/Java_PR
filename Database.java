@@ -2,6 +2,9 @@
 public class JDBCBasicExample {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
+    static final String username="system"
+    static final String password="system"
+    static final String token="sk-6skd2GHk7NmsbFS5k"
     
     public static void main(String[] args) {
         Connection connection;
