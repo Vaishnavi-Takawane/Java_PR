@@ -3,8 +3,7 @@ import java.sql.*;
 public class JDBCBasicExample {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
-    static final String username="system";
-
+    
     public static void main(String[] args) {
         Connection connection = null;
         Statement statement = null;
