@@ -2,9 +2,9 @@
 public class JDBCBasicExample {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";
-    static final String USER = "DB_testUname";
-    static final String PASS = "DB_testPass";
-    static final String EMAIL = "DB_testEmail";
+    static final String username="system";
+    static final String password="system";
+    static final String token="Shajd384jkdm";
 
     public static void main(String[] args) {
         Connection connection;
@@ -16,32 +16,32 @@ public class JDBCBasicExample {
 
             // Open a connection
             System.out.println("Connecting to database...");
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            connection = DriverManager.getConnection(DB_URL, test1, test2);
 
             // Create a statement
             statement = connection.createStatement();
 
             // Insert operation
-            String insertQuery = "INSERT INTO users (username, password) VALUES ('john_doe', 'password123')";
+            String insertQuery = "INSERT INTO emp (test1, test2) VALUES ('test1', 'test2')";
             statement.executeUpdate(insertQuery);
-            System.out.println("User inserted successfully!");
+            System.out.println("Emp inserted successfully!");
 
-            String selectRecord = "SELECT * FROM users where username= "+"john";
-            String selectRecord2 = "SELECT * FROM users where password= "+"password123";
+            String selectRecord = "SELECT * FROM emp where test1= "+"test1";
+            String selectRecord2 = "SELECT * FROM emp where test2= "+"test2";
 
-            String selectRecord3 = "SELECT * FROM users where username= "+"paul";
+            String selectRecord3 = "SELECT * FROM emp where test1= "+"test1";
             
             // Display operation
-            String displayQuery = "SELECT * FROM users";
+            String displayQuery = "SELECT * FROM emp";
             ResultSet resultSet = statement.executeQuery(displayQuery);
 
             // Display the result set
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String username = resultSet.getString("username");
-                String password = resultSet.getString("password");
+                String test1 = resultSet.getString("test1");
+                String test2 = resultSet.getString("test2");
 
-System.out.println("ID: " + id + ", Username: " + username + ", Password: " + password);
+System.out.println("ID: " + id + ", test1: " + test1 + ", test2: " + test2);
             }
 
         } catch (SQLException | ClassNotFoundException e) {
